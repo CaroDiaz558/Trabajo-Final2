@@ -1,0 +1,27 @@
+.header{
+    width: auto;
+    height: 100px;
+    background-color: rgb(27, 24, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+}
+
+.btn{
+    display: flex;
+    justify-content: end;
+}
+.favoritos, .busqueda{
+    border: 1px solid rgb(53, 32, 131) ;
+    padding: 10px;
+    text-decoration: none;
+    
+}
+
+
