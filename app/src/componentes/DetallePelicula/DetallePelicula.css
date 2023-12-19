@@ -1,0 +1,84 @@
+.detalle-pelicula{
+   width: auto;
+   background: linear-gradient(to left, rgb(50, 50, 51) 28px, rgb(13, 13, 14) 50%, rgb(34, 34, 37)) ;
+   min-height: 76.2vh;
+   padding-left: 30px;
+   color: var(--colorTexto);
+   display: flex;
+   align-items: center;
+   font-family: var(--fuenteCabin);
+}
+
+.detalle-pelicula img{
+   width: 300px;
+   
+}
+
+.detalle-info-pelicula{
+   padding-left: 60px;
+}
+
+.detalle-info-pelicula h2{
+   padding-bottom: 20px;
+}
+
+.detalle-info-pelicula ul{
+   list-style: none;
+   display: flex;
+}
+
+.detalle-info-pelicula ul li{
+   padding-right: 10px;
+   padding-top: 8px;
+   padding-bottom: 20px;
+}
+
+.detalle-info-pelicula p{
+   width: 500px;
+   padding-bottom: 30px ;
+}
+
+.detalle-info-pelicula .icon-favorito{
+   font-size: 40px;
+   color: white;
+   
+}
+
+/* Estilos para dispositivos móviles desde 768px hasta 480px  ANCHO:768 ALTO:1366 */
+@media all and (max-width: 768px){
+
+.detalle-pelicula{
+ width: 156%; 
+ min-height:130vh;
+ justify-content: center;
+}
+
+.detalle-pelicula img{
+   width: 300px;
+   /* border: 1px solid; */
+}
+
+}
+
+/* Estilos para dispositivos móviles desde 320px hasta 480px */
+@media all and (max-width: 480px){
+
+   .detalle-pelicula{
+      width: 160%;
+      min-height:130vh;
+      flex-direction: column;
+      padding-top: 60px;
+      align-items: center;
+      padding-left: 0;
+   }
+   .detalle-pelicula img{
+      width: 200px;
+      padding-bottom: 50px;
+      
+   }
+
+   .detalle-info-pelicula p{
+      width: 300px;
+      /* padding-bottom: 30px ; */
+   }
+}

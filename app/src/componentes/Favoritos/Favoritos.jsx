@@ -1,60 +1,64 @@
-import React,  {useState}from 'react'
-import { Pelicula } from '../Pelicula/Pelicula';
+import React, { useState, useEffect } from "react";
+import './Favoritos.css'
+import { Pelicula } from '../Pelicula/Pelicula'
+
+const Favoritos = ({ favoritos, eliminarFavoritos}) => {
+  const [fav, setFav] = useState(true);
 
 
-const Favoritos = (favorito) => {
-
-
-    
-  const urlPath = "https://image.tmdb.org/t/p/original";
-
-  const [favoritos, setFavoritos] = useState([]);
-
-  
-  function agregarFavoritos(pelicula){
-    const nuevoFavoritos= [...favoritos]
-    nuevoFavoritos.push(pelicula)
-    setFavoritos(nuevoFavoritos)
-    console.log(nuevoFavoritos)
-  }
-
-  function eliminarFavoritos(pelicula){
-    const nuevoFavoritos = favoritos.filter(e => e.id !== pelicula.id )
-    setFavoritos(nuevoFavoritos)
-    console.log(nuevoFavoritos)
-  }
-
-  
-  function agregarFavorito(){
-
-    if(favorito){
-      eliminarFavoritos(pelicula)
-    
-    }else{
-      agregarFavoritos(pelicula)
-      
-    }
+  function agregarFavorito(id) {
+    if (fav) {
+      eliminarFavoritos(id)
      
+    }
   }
-
 
   return (
     <>
-      <div>Lista de tus Favoritos</div>
+    <div className="favorito"> 
+    
+      <div className="title-favorito">Lista de tus Favoritos</div>
+    
+    <div className="list-favorito">
+    <ul>
+        {favoritos.map((favorito) => (
 
-      {
-        favoritos.map((favorito)=>{
-          <Pelicula key={favorito.id} pelicula={favorito} />
-        })
-      }
+          <li key={favorito.id}>
+           <div className="favorito-item">
+ 
+           <div>
+               <Pelicula key={favorito.id} pelicula={favorito} />
+           </div>
+           
+          <div className="icon-favorito">
+              {fav ? (
+                <i
+                  className="bi bi-dash-circle icon-fav"
+                  onClick={() => agregarFavorito(favorito.id)}
+                >
+                  {" "}
+                </i>
+              ) : (
+                <i
+                  className="bi bi-plus-circle-fill icon-fav"
+                  onClick={() => agregarFavorito(favorito.id)}
+                >
+                  {" "}
+                </i>
+              )}
+            </div>
+            
+           </div>
+          </li>
+        ))}
+      </ul>
+    </div>
      
-      <div>
-        </div>
-      
 
-
+       
+    </div>
     </>
-  )
-}
+  );
+};
 
-export {Favoritos} 
+export { Favoritos };

@@ -1,9 +1,23 @@
 footer{
     width: auto;
     height: 100px;
-    background-color: rgb(27, 24, 24);
+    background: linear-gradient(to left, rgb(50, 50, 51) 28px, rgb(13, 13, 14) 50%, rgb(34, 34, 37)) ;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    font-family: var(--fuenteCabin);
+}
+
+
+@media all and (max-width: 768px){
+    footer{
+        width: 160%;
+    }
+}
+
+@media all and (max-width: 480px){
+    footer{
+        width: 160%;
+    }
 }

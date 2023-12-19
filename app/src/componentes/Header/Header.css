@@ -1,11 +1,34 @@
-.header{
-    width: auto;
-    height: 100px;
-    background-color: rgb(27, 24, 24);
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Handjet&family=Kanit:wght@600&family=Lato:ital,wght@0,700;1,300&family=Quantico:wght@700&family=Rethink+Sans:wght@800&family=Roboto:wght@300;400&display=swap');
+
+.header .navBar{
+    width:auto;
+    height: 80px;
+    background: linear-gradient(to left, rgb(13, 13, 14) 28px, rgb(50, 50, 51) 50%, rgb(34, 34, 37)) ;
+   
+    font-weight: bold;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    
+    font-weight: bold;  
+
+}
+
+.navBar .logo{
+     margin-left: 40px;
+     display: flex;
+     justify-content: space-between;
+   
+}
+.navBar .logo h3{
+    font-family: 'Quantico', sans-serif;
+    color: rgb(155, 151, 151);
+    font-size: 25px;
+    padding-top: 10px ;
+    padding-left: 5px;
+
+}
+.navBar .menu{
+    font-family: var(--fuenteCabin) ;
 }
 
 .icon{
@@ -17,11 +40,45 @@
     display: flex;
     justify-content: end;
 }
-.favoritos, .busqueda{
-    border: 1px solid rgb(53, 32, 131) ;
+.navBar .favoritos, .busqueda{
+    border: transparent;
     padding: 10px;
     text-decoration: none;
+    color: var(--colorTexto);
+    font-size: 18px;
+    margin: 10px;
     
 }
+
+
+.navBar .menu .accion:hover{
+ color: white;
+ border-bottom: 1px solid white;
+ transition: 0.5s;
+}
+
+.menu{
+    margin-right: 100px;
+    
+}
+
+@media all and (max-width: 768px){
+
+    .header .navBar{
+     width: 140%;
+    }
+}
+
+@media all and (max-width: 768px){
+    .header .navBar{
+        width:160%;
+    }
+
+    
+}
+
+
+
+
 
 

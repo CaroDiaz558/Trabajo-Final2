@@ -2,3 +2,13 @@
   margin: 0;
   padding: 0;
 }
+
+:root{
+  --fuenteCabin: 'Cabin', sans-serif;
+  --colorTexto:  rgb(145, 143, 143);
+  /* --fuenteLogo: 'Quantico', sans-serif, 'Handjet', sans-serif; */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Handjet&family=Kanit:wght@600&family=Lato:ital,wght@0,700;1,300&family=Rethink+Sans:wght@800&family=Roboto:wght@300;400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Handjet&family=Kanit:wght@600&family=Lato:ital,wght@0,700;1,300&family=Quantico:wght@700&family=Rethink+Sans:wght@800&family=Roboto:wght@300;400&display=swap'); */
+
