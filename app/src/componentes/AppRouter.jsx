@@ -11,7 +11,7 @@ import {
 import useFavorito from "../hooks/useFavorito";
 
 const AppRouter = () => {
-  const { favoritos, agregarFavoritos, eliminarFavoritos } = useFavorito();
+  const { favoritos, agregarFavoritos, eliminarFavoritos, cambiarEstado} = useFavorito();
 
   return (
     <BrowserRouter>
@@ -24,8 +24,10 @@ const AppRouter = () => {
           path="/pelicula/:id"
           element={
             <DetallePelicula
-              favoritos={favoritos}
+              // favoritos={favoritos}
               agregarFavoritos={agregarFavoritos} 
+              eliminarFavoritos={eliminarFavoritos}
+              cambiarEstado={cambiarEstado}
               
             />
           }

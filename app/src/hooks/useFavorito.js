@@ -27,21 +27,24 @@ export default function useFavorito() {
     return false;
   }
 
-  // function cambiarEstado(id){
+  function cambiarEstado(id){
+   let bandera= false;
+    favoritos.forEach((e) => {
+      if (id === e.id) {
+        bandera=true;
+      }
 
-  //   if(favoritos.id === id)
-  // {
-  //   favoritos.forEach((e) => {
-  //     if (pelicula.id === e.id) {
-  //       return true;
-  //     }
+    });
 
-  //   });
-  // }
-  // return false;
-  // }
+    if(bandera){
+      return true;
+    }else{
+      return false;
+    }
+  
+  }
 
-  return { favoritos, agregarFavoritos, eliminarFavoritos};
+  return { favoritos, agregarFavoritos, eliminarFavoritos, cambiarEstado};
 }
 
 

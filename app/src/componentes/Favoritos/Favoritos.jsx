@@ -3,16 +3,7 @@ import './Favoritos.css'
 import { Pelicula } from '../Pelicula/Pelicula'
 
 const Favoritos = ({ favoritos, eliminarFavoritos}) => {
-  const [fav, setFav] = useState(true);
-
-
-  function agregarFavorito(id) {
-    if (fav) {
-      eliminarFavoritos(id)
-     
-    }
-  }
-
+  
   return (
     <>
     <div className="favorito"> 
@@ -31,21 +22,14 @@ const Favoritos = ({ favoritos, eliminarFavoritos}) => {
            </div>
            
           <div className="icon-favorito">
-              {fav ? (
+              
                 <i
                   className="bi bi-dash-circle icon-fav"
-                  onClick={() => agregarFavorito(favorito.id)}
+                  onClick={() => eliminarFavoritos(favorito.id)}
                 >
                   {" "}
                 </i>
-              ) : (
-                <i
-                  className="bi bi-plus-circle-fill icon-fav"
-                  onClick={() => agregarFavorito(favorito.id)}
-                >
-                  {" "}
-                </i>
-              )}
+             
             </div>
             
            </div>

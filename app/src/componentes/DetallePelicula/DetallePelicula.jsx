@@ -5,11 +5,12 @@ import { useEffect, useState } from "react";
 
 const DetallePelicula = ({ agregarFavoritos, eliminarFavoritos}) => {
   
+  const { id } = useParams();
+  
   const [pelicula, setPelicula] = useState({});
 
-  const [favorito, setFavorito] = useState(false);
+  const [fav, setFav] = useState(false);
 
-  const { id } = useParams();
 
   const fetchPelicula = (id) => {
     fetch(
@@ -26,15 +27,16 @@ const DetallePelicula = ({ agregarFavoritos, eliminarFavoritos}) => {
   }, [id]);
 
 
+
  
 
-  function agregarFavorito() {
-    if (favorito) {
-      eliminarFavoritos();
-      setFavorito(false);
+  function agregarFavorito() {   
+    if (fav) {
+      eliminarFavoritos(id);
+      setFav(false);
     } else {
-      if(agregarFavoritos(pelicula))
-         setFavorito(true);
+     agregarFavoritos(pelicula);
+      setFav(true);
     }
   }
 
@@ -57,16 +59,17 @@ const DetallePelicula = ({ agregarFavoritos, eliminarFavoritos}) => {
               ))}
           </ul>
           <p>{pelicula.overview}</p>
+        
           <div className="icon-favorito">
          
-          {favorito ? (
+          {fav ? (
             <i className="bi bi-dash-circle icon-fav" onClick={agregarFavorito}>
               {" "}
             </i>
           ) : (
             <i
               className="bi bi-plus-circle-fill icon-fav"
-              onClick={agregarFavorito}
+                onClick={agregarFavorito}
             >
               {" "}
             </i>
